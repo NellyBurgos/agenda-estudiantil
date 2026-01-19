@@ -1,0 +1,123 @@
+<div class="app-container">
+  
+  <h1 class="tituloPrincipal">📖 Agenda Estudiantil</h1>
+
+  <div class="saludo-container" *ngIf="authService.user$ | async as user">
+    <h1 class="nombre-usuario">¡Hola, {{ user.displayName || 'Estudiante' }}! 👋</h1>
+    <button (click)="authService.logout()" class="btn-salir">Cerrar Sesión</button>
+  </div>
+
+  <h2 class="subtitulo">🗓️ Tu asistente personal para no olvidar ninguna fecha importante.</h2>
+  <p class="info-inscripcion">🧠 Recordá todo, estresate menos.</p>
+
+  <button class="btn-tema" (click)="toggleTema()">🔮 Cambiar modo claro/oscuro</button>
+
+
+  <div class="form-container-pro">
+    <form (submit)="$event.preventDefault(); guardarEvento()" id="form-evento">
+      
+      <div class="fila-flexible">
+        <div class="columna-mitad">
+          <label class="label-pro">Asignaturas disponibles:</label>
+          <select [(ngModel)]="materia" name="materia" required class="input-pro">
+            <option value="">Seleccionar...</option>
+            <option *ngFor="let m of materias" [value]="m">{{m}}</option>
+          </select>
+        </div>
+
+        <div class="columna-mitad">
+          <label class="label-pro">Modalidad de evaluación:</label>
+          <select [(ngModel)]="tiposSeleccionados" name="tipo" multiple size="4" required class="input-pro select-multiple-pro">
+            <option value="Trabajo Práctico">Trabajo Práctico</option>
+            <option value="Autoevaluación">Autoevaluación</option>
+            <option value="1er Parcial">1er Parcial</option>
+            <option value="2do Parcial">2do Parcial</option>
+            <option value="Recuperatorio">Recuperatorio</option>
+            <option value="Examen Final">Examen Final</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="input-agregar-container">
+        <input type="text" [(ngModel)]="nuevaMateriaInput" name="nuevaM" placeholder="Agregar nueva materia" class="input-pro input-flat">
+        <button type="button" (click)="agregarMateria()" class="btn-plus-pro">+</button>
+      </div>
+  
+      <div class="fila-flexible">
+        <div class="columna-mitad">
+          <label class="label-pro">Fecha:</label>
+          <input type="date" [(ngModel)]="fecha" name="fecha" required class="input-pro">
+        </div>
+        <div class="columna-mitad">
+          <label class="label-pro">Hora:</label>
+          <input type="time" [(ngModel)]="hora" name="hora" required class="input-pro"> 
+        </div>
+      </div>
+  
+      <div class="input-grupo full-width">
+        <label class="label-pro">Calificación / Nota:</label>
+        <input type="number" [(ngModel)]="nuevaNota" name="nuevaNota" placeholder="Ej: 8" min="1" max="10" class="input-pro">
+      </div>
+  
+      <button type="submit" class="boton-pro-gradiente">Agregar evento</button>
+  
+    </form>
+  </div>
+
+
+  <div class="seccion-alumnos">
+    <h2 class="titulo-seccion">📋 Tus eventos guardados</h2>
+
+    <div class="promedio-card" *ngIf="(listaEventos$ | async) as eventos">
+      <p>Tu Promedio General</p>
+      <h2 class="promedio-valor" [style.color]="calcularPromedio(eventos) >= 7 ? '#4caf50' : '#ff9800'">
+        {{ calcularPromedio(eventos) | number:'1.1-1' }}
+      </h2>
+    </div>
+    
+    <div class="eventos-grid" *ngIf="(listaEventos$ | async) as eventos; else cargando">
+      <div *ngFor="let evento of eventos" class="evento-item">
+        <div class="evento-info">
+          <h3>{{ evento.materia }}</h3>
+          <p><strong>Tipo:</strong> {{ evento.tipo }}</p>
+          <p><strong>📅:</strong> {{ evento.fecha }}</p>
+          <p><strong>⏰:</strong> {{ evento.hora }}</p>
+          <p><strong>Nota:</strong> <span class="badge-nota">{{ evento.nota || '—' }}</span></p>
+
+          <div class="estado-selector">
+            <select [(ngModel)]="evento.estado" (change)="actualizarEstado(evento)" [attr.data-estado]="evento.estado">
+              <option value="pendiente">⏳ Pendiente</option>
+              <option value="aprobado">✅ Aprobado</option>
+              <option value="desaprobado">❌ Desaprobado</option>
+              <option value="promocionado">🎓 Promocionado</option>
+            </select>
+          </div>
+        </div>
+        <button (click)="evento.id && eliminarEvento(evento.id)" class="btn-eliminar">Eliminar</button>
+      </div>
+      
+      <p *ngIf="eventos.length === 0" class="empty-msg">No tienes eventos registrados aún.</p>
+    </div>
+
+    <ng-template #cargando>
+      <p class="loading-msg">Cargando tus eventos...</p>
+    </ng-template>
+  </div>
+
+
+  <div *ngIf="soyAdmin" class="panel-admin-container">
+    <div class="admin-separator"></div>
+    <h2 class="titulo-admin">👑 Panel de Control: Todos los Alumnos</h2>
+    
+    <div class="admin-grid">
+      <div class="card-admin" *ngFor="let ev of listaTotalAdmin$ | async">
+        <p><strong>👤:</strong> {{ ev.alumnoNombre }}</p>
+        <p><strong>📧:</strong> {{ ev.alumnoEmail }}</p>
+        <hr>
+        <p><strong>{{ ev.materia }}</strong> ({{ ev.estado }})</p>
+        <p>Nota: {{ ev.nota }} | {{ ev.tipo }}</p>
+      </div>
+    </div>
+  </div>
+
+</div> 

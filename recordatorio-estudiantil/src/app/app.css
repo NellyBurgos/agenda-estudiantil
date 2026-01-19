@@ -1,0 +1,45 @@
+/* Variables de Tema */
+:root {
+  --fondo: #f5eeee;
+  --texto: #1f1d1d;
+  --evento-bg: #818584; 
+  --borde: #dad6d9;
+}
+
+/* Aplicación del fondo al HTML completo */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  transition: background 0.3s ease;
+}
+
+/* Clase para el Modo Oscuro */
+body.oscuro {
+  --fondo: #121212;
+  --texto: #f7ebeb;
+  --evento-bg: #1e1e1e;
+  --borde: #bb86fc;
+}
+
+/* Contenedor principal para centrar la app */
+.app-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.tituloPrincipal {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  color: #2a9177;
+  font-size: 1.5em;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}

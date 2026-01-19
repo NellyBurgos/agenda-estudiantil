@@ -1,0 +1,44 @@
+<div class="app-container">
+  <div class="header-card">
+    <span class="icono-principal">📖</span>
+    <h1 class="tituloPrincipal">Agenda Estudiantil</h1>
+    <p class="subtitulo-login">Inicia sesión para continuar</p>
+
+    <div class="formulario-login">
+      <div class="input-group">
+        <label class="label-custom">Tu email</label>
+        <input type="email" [(ngModel)]="nuevoEmail" placeholder="ejemplo@correo.com">
+      </div>
+
+      <div class="input-group">
+        <label class="label-custom">Tu contraseña</label>
+        <div class="password-wrapper">
+          <input 
+            [type]="isPasswordVisible ? 'text' : 'password'" 
+            [(ngModel)]="nuevoPass" 
+            placeholder="Contraseña">
+          
+          <button type="button" class="eye-icon" (click)="togglePassword()">
+            {{ isPasswordVisible ? '🙈' : '👁️' }}
+          </button>
+        </div>
+      </div>
+
+      <div class="recuperar-link">
+        <p (click)="authService.recuperarContrasena(nuevoEmail)">
+          ¿Has olvidado tu contraseña? <span>Haz clic aquí</span>
+        </p>
+      </div>
+
+      <button class="btn-red-capsule" (click)="ejecutarLogin()">
+        Iniciar sesión
+      </button>
+
+      <p>¿No tienes cuenta? 
+        <span (click)="irARegistro()" style="cursor: pointer; color: #007bff; font-weight: bold;">
+          Regístrate aquí
+        </span>
+      </p>
+    </div>
+  </div>
+</div>

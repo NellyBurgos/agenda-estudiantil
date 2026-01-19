@@ -1,0 +1,125 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000; /* Fondo negro */
+  color: white;
+}
+
+.login-box {
+  background-color: #121212;
+  padding: 40px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid #333;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #bbb;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: white;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff4d4d; /* El rojo que querías */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.registro-footer span {
+  color: #007bff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Esto coloca el ojito justo al final del cuadro de texto */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 45px !important; /* Deja espacio para que el ojo no tape las letras */
+}
+
+.toggle-icon {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #ffffff; /* ¡Color blanco para que se vea! */
+  z-index: 10;
+  user-select: none;
+}
+
+/* =========================================
+   AJUSTES PARA MÓVILES (Solo pantalla Registro)
+   ========================================= */
+@media (max-width: 480px) {
+  
+  /* 1. Ajustamos la caja principal */
+  .login-box {
+    width: 95%;           /* Ocupa casi todo el ancho */
+    max-width: none;      /* Quita límites fijos si los había */
+    padding: 20px 15px;   /* Menos relleno interno */
+    margin-top: 10px;     /* Poco margen arriba para que entre el teclado */
+  }
+
+  /* 2. Título más pequeño */
+  .login-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  /* 3. Apretamos los espacios entre los inputs */
+  .input-group {
+    margin-bottom: 12px; /* Menos espacio entre cada campo */
+  }
+
+  label {
+    font-size: 0.85rem;  /* Texto de etiqueta más chico */
+    margin-bottom: 3px;
+  }
+
+  /* 4. Inputs compactos pero tocables */
+  input {
+    height: 42px;        /* Altura justa para el dedo */
+    font-size: 0.95rem;
+  }
+
+  /* 5. Ajuste del Botón */
+  .btn-login {
+    height: 48px;
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+}

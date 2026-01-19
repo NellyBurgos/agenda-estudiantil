@@ -1,0 +1,23 @@
+/* Colores para Modo Claro (Por defecto) */
+:root {
+  --fondo-pagina: #ffffff;
+  --texto-principal: #000000;
+  --evento-bg: #f9f9f9;
+  --borde: #522648;
+}
+
+/* Colores para Modo Oscuro (Se activa con el botón) */
+body.oscuro {
+  --fondo-pagina: #121212; /* El negro de tu proyecto original */
+  --texto-principal: #ffffff;
+  --evento-bg: #1e1e1e;
+  --borde: #a04a8d;
+}
+
+body {
+  background-color: var(--fondo-pagina);
+  color: var(--texto-principal);
+  transition: all 0.3s ease;
+  margin: 0;
+  font-family: sans-serif;
+}

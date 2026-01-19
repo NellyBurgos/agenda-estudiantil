@@ -1,0 +1,176 @@
+/* login.css - DISEÑO DARK CON BOTÓN ROJO CÁPSULA */
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000; /* Fondo negro profundo */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.header-card {
+  background-color: #1a1a1a; /* Tu caja oscura */
+  padding: 40px 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid #333;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.icono-principal {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.tituloPrincipal {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 5px;
+  letter-spacing: -1px;
+}
+
+.subtitulo-login {
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+/* FORMULARIO */
+.formulario-login {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+}
+
+.label-custom {
+  display: block;
+  color: #bbb;
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+  padding-left: 2px;
+}
+
+/* INPUTS CON OJITO */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  height: 48px;
+  padding: 0 15px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #0d0d0d;
+  color: white;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #ff0000;
+}
+
+.password-wrapper input {
+  padding-right: 45px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+}
+
+/* BOTÓN ROJO ESTILO CÁPSULA */
+.btn-red-capsule {
+  width: 100%;
+  height: 52px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 50px; /* Redondeado total */
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+
+.btn-red-capsule:hover {
+  background-color: #cc0000;
+  transform: scale(1.02);
+}
+
+/* ENLACES INFERIORES */
+.recuperar-link {
+  text-align: right;
+  margin-top: -8px;
+}
+
+.recuperar-link p {
+  color: #888;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.recuperar-link span {
+  color: #4a6fff;
+  font-weight: bold;
+}
+
+.registro-footer {
+  margin-top: 20px;
+  color: #888;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.registro-footer span {
+  color: #4a6fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* =========================================
+   AJUSTES PARA CELULARES (Responsive)
+   ========================================= */
+@media (max-width: 480px) {
+  .header-card {
+    padding: 25px 20px; 
+    width: 95%; 
+    margin-top: 0; 
+  }
+
+  .tituloPrincipal {
+    font-size: 1.5rem; 
+  }
+
+  .icono-principal {
+    font-size: 2rem; 
+    margin-bottom: 5px;
+  }
+
+  .formulario-login {
+    gap: 15px; 
+  }
+  
+  .btn-red-capsule {
+    height: 48px; 
+    font-size: 1rem;
+  }
+}
