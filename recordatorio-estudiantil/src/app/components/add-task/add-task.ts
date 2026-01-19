@@ -8,22 +8,7 @@ import { Router } from '@angular/router';
 import { Firestore, doc, updateDoc } from '@angular/fire/firestore';
 
 import { DatabaseService, EventoEstudiantil } from '../../services/database';
-//export interface EventoEstudiantil {
-//  id?: string;
-//  materia: string;
-//  fecha: string;
-//  hora: string;
-//  tipo: string;
-//  nota?: number;
-//  estado?: string;
-//  usuarioId: string;
-//  alumnoEmail?: string; 
-//  nuevaNota?: number;
-//  alumnoNombre?: string;
-//  creadoEn?: Date;
-//
-//
-//}
+
 
 @Component({
   selector: 'app-add-task',
@@ -45,7 +30,7 @@ export class AddTaskComponent implements OnInit {
   hora = '';
   nota: number | null = null;
   nuevaMateriaInput = '';
-  nuevaNota: number | null = null; // agregado
+  nuevaNota: number | null = null; 
   materias: string[] = [
     'Organización empresarial', 'Matemática', 'Arquitectura y Sistemas Operativos',
     'Programación I', 'Inglés I', 'Base de Datos I', 'Probabilidad y Estadística',
@@ -61,11 +46,9 @@ export class AddTaskComponent implements OnInit {
     document.body.classList.add('oscuro');
   }
 
-  // 1. Centralizamos todo en una sola escucha al usuario
   this.authService.user$.subscribe(user => {
     if (user) {
       this.listaEventos$ = this.dataService.obtenerEventos(user.uid);
-      // 2. Si es la admin, cargamos TODO el panel
       if (user.email === 'burgosn871@gmail.com') {
         this.soyAdmin = true;
         this.listaTotalAdmin$ = this.dataService.obtenerTodosLosEventosAdmin();
