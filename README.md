@@ -2,6 +2,10 @@
 
 Aplicación web progresiva para la gestión de tareas académicas, desarrollada con arquitectura basada en componentes y servicios en la nube.
 
+## 🔗 Demo en Vivo
+¡Prueba la aplicación funcionando aquí! 👇
+### [🌐 https://recordatorioestudiantil.web.app](https://recordatorioestudiantil.web.app)
+
 ## 🚀 Tecnologías
 * **Frontend:** Angular 17+ (Standalone Components)
 * **Lenguajes:** TypeScript, HTML5, CSS3
