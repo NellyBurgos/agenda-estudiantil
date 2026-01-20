@@ -6,7 +6,6 @@ Aplicación web progresiva para la gestión de tareas académicas, desarrollada 
 ¡Prueba la aplicación funcionando aquí! 👇
 ### [🌐 https://recordatorioestudiantil.web.app](https://recordatorioestudiantil.web.app)
 
-## 🚀 Tecnologías
 
 ## 🚀 Tecnologías
 
