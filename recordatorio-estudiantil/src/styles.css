@@ -1,4 +1,4 @@
-/* Colores para Modo Claro (Por defecto) */
+
 :root {
   --fondo-pagina: #ffffff;
   --texto-principal: #000000;
@@ -6,9 +6,8 @@
   --borde: #522648;
 }
 
-/* Colores para Modo Oscuro (Se activa con el botón) */
 body.oscuro {
-  --fondo-pagina: #121212; /* El negro de tu proyecto original */
+  --fondo-pagina: #121212; 
   --texto-principal: #ffffff;
   --evento-bg: #1e1e1e;
   --borde: #a04a8d;
