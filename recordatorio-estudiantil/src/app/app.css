@@ -1,4 +1,4 @@
-/* Variables de Tema */
+
 :root {
   --fondo: #f5eeee;
   --texto: #1f1d1d;
@@ -6,7 +6,6 @@
   --borde: #dad6d9;
 }
 
-/* Aplicación del fondo al HTML completo */
 html, body {
   height: 100%;
   margin: 0;
@@ -16,7 +15,7 @@ html, body {
   transition: background 0.3s ease;
 }
 
-/* Clase para el Modo Oscuro */
+
 body.oscuro {
   --fondo: #121212;
   --texto: #f7ebeb;
@@ -24,7 +23,6 @@ body.oscuro {
   --borde: #bb86fc;
 }
 
-/* Contenedor principal para centrar la app */
 .app-container {
   max-width: 600px;
   margin: auto;
