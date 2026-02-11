@@ -1,17 +1,16 @@
-/* Estilos generales para la aplicación para centrar */
+
 .app-container {
-  width: 95%;            /* Ancho casi total en celulares */
-  max-width: 700px;      /* Ancho máximo contenido para que no se estire */
-  margin: 50px auto;     /* Centrado horizontal automático */
-  padding: 40px;         /* Espacio interno de la "caja" */
-  background-color: var(--evento-bg); /* Fondo de la tarjeta */
-  border-radius: 20px;   /* Bordes redondeados profesionales */
-  box-shadow: 0 15px 40px rgba(0,0,0,0.6); /* Sombra para resaltar del fondo */
+  width: 95%;            
+  max-width: 700px;      
+  margin: 50px auto;     
+  padding: 40px;         
+  background-color: var(--evento-bg); 
+  border-radius: 20px;   
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6); 
   display: flex;
   flex-direction: column;
 }
 
-/* El título principal "Agenda Estudiantil" ahora será blanco nítido */
 .tituloPrincipal {
   color: var(--texto-principal);
   font-size: 2rem;
@@ -19,9 +18,9 @@
   margin-bottom: 10px;
   text-align: center;
   display: block;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Sombra suave para que resalte más */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3); 
 }
-/* Estilos de los inputs y selectores que me pasaste */
+
 input, select {
   width: 100%;
   height: 40px;
@@ -31,11 +30,11 @@ input, select {
   border: 1.5px solid #ccc;
   border-radius: 6px;
   font-size: 1em;
-  background-color: var(--evento-bg); /* Se adapta al tema */
-  color: var(--texto-principal);     /* Se adapta al tema */
+  background-color: var(--evento-bg); 
+  color: var(--texto-principal);     
 }
 
-/* Tu botón púrpura original */
+
 .botonAgregarEvento {
   margin-top: 15px;
   padding: 10px;
@@ -48,48 +47,48 @@ input, select {
   font-weight: bold;
 }
 
-/* Nuevo contenedor para organizar los cuadraditos */
+
 .eventos-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Crea las 3 columnas iguales */
-  gap: 20px;                             /* Espacio entre cada cuadro */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;                           
   padding: 0;
   list-style: none;
   margin-top: 20px;
 }
 
-/* Estilo de cada cuadradito individual */
+
 .evento-item {
   display: flex;
   flex-direction: column; 
   justify-content: space-between;
   padding: 20px;
   background-color: var(--evento-bg);
-  border-top: 5px solid #5e2a5e;  /* El púrpura ahora va arriba para resaltar el cuadro */
+  border-top: 5px solid #5e2a5e;  
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  min-height: 250px;              /* Altura uniforme para todos los cuadros */
+  min-height: 250px;              
   transition: transform 0.3s ease;
 }
 
 .evento-item:hover {
-  transform: translateY(-5px);    /* Efecto de elevación al pasar el mouse */
+  transform: translateY(-5px);    
 }
 
-/* Fuerza a que los párrafos dentro de la info se apilen */
+
 .evento-info {
   display: flex;
-  flex-direction: column; /* Alineación vertical */
-  gap: 4px; /* Espacio entre cada línea de texto */
+  flex-direction: column; 
+  gap: 4px; 
   color: var(--texto-principal);
 }
 
 .evento-info p {
-  margin: 0; /* Quita márgenes extra para que queden bien pegaditos */
+  margin: 0;
   font-size: 0.95rem;
 }
 
-/* Botón de cambio de tema */
+
 .btn-tema {
   background-color: #5e2a5e;
   color: white;
@@ -100,25 +99,24 @@ input, select {
   margin-bottom: 10px;
 }
 
-/* Estilo para el contenedor del saludo */
 
 .saludo-container {
   padding: 15px;
   border-radius: 12px;
-  background-color: rgba(0, 0, 0, 0.05); /* Un fondo muy suave para dar contraste */
+  background-color: rgba(0, 0, 0, 0.05); 
   margin-bottom: 20px;
 }
 
-/* El nombre del usuario con el púrpura de tu botón */
+
 .nombre-usuario {
-  color: var(--texto-principal) !important; /* Usa la variable de tu tema */
+  color: var(--texto-principal) !important; 
   font-size: 1.8rem;
   font-weight: 800;
   text-align: center;
   margin-top: 10px;
   display: block;
 }
-/* Estilo para el botón eliminar */
+
 .btn-eliminar {
   margin-top: 15px;
   width: 100%; 
@@ -137,7 +135,6 @@ input, select {
   border-color: #ff4d4d;
 }
 
-/* Botón de cerrar sesión estilo minimalista */
 .btn-cerrar {
   background-color: transparent;
   color: #888;
@@ -158,16 +155,15 @@ input, select {
 
 /* --- ESTILOS PARA EL PANEL DE ADMINISTRADORA --- */
 
-/* Línea divisora estética */
 .admin-separator {
   margin: 40px 0;
   border-top: 2px dashed #5e2a5e;
   opacity: 0.5;
 }
 
-/* Contenedor principal del panel */
+
 .panel-administradora {
-  background: rgba(94, 42, 94, 0.1); /* Fondo púrpura muy suave */
+  background: rgba(94, 42, 94, 0.1); 
   padding: 20px;
   border-radius: 15px;
   border: 1px solid rgba(94, 42, 94, 0.3);
@@ -180,7 +176,7 @@ input, select {
   font-size: 1.5rem;
 }
 
-/* Tarjetas individuales dentro del panel de admin */
+
 .card-admin {
   background-color: var(--evento-bg);
   color: var(--texto-principal);
@@ -188,12 +184,12 @@ input, select {
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  border-left: 5px solid #ff9800; /* Color naranja para diferenciarlo de la lista normal */
+  border-left: 5px solid #ff9800;
   transition: transform 0.2s;
 }
 
 .card-admin:hover {
-  transform: scale(1.02); /* Efecto de levante al pasar el mouse */
+  transform: scale(1.02); 
 }
 
 .card-admin p {
@@ -202,10 +198,10 @@ input, select {
 }
 
 .card-admin strong {
-  color: #ff9800; /* Resalta las etiquetas en naranja */
+  color: #ff9800; 
 }
 
-/* Mensaje de carga */
+
 .mensaje-vacio, .cargando-texto {
   text-align: center;
   color: var(--texto-principal);
@@ -216,13 +212,12 @@ input, select {
 
 /* --- ESTILOS PARA EL PROMEDIO AUTOMÁTICO --- */
 
-/* La tarjeta que envuelve el promedio */
 .promedio-card {
   background: linear-gradient(145deg, #1e1e1e, #121212);
   padding: 25px;
   border-radius: 20px;
   border: 1px solid #333;
-  border-left: 6px solid #ff9800; /* Borde naranja brillante */
+  border-left: 6px solid #ff9800; 
   margin: 20px 0 30px 0;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
@@ -236,11 +231,11 @@ input, select {
   margin-bottom: 5px;
 }
 
-/* El número gigante del promedio */
+
 .promedio-valor {
   font-size: 3.5rem;
   font-weight: 900;
-  color: #ff9800; /* Color naranja de la imagen */
+  color: #ff9800; 
   margin: 0;
   text-shadow: 0 0 15px rgba(255, 152, 0, 0.3);
 }
@@ -265,7 +260,7 @@ input, select {
 .estado-selector select {
   background-color: #000;
   color: #fff;
-  border: 1.5px solid #5e2a5e; /* Tu púrpura de marca */
+  border: 1.5px solid #5e2a5e; 
   border-radius: 6px;
   padding: 4px 8px;
   font-size: 0.9rem;
@@ -278,25 +273,21 @@ input, select {
   border-color: #ff9800;
 }
 
-/* Animación para resaltar cuando el promedio es excelente */
+
 .promedio-valor:hover {
   transform: scale(1.05);
   transition: 0.3s;
 }
 
-/* =========================================
-   1. CONTENEDOR PRINCIPAL (ESTILO GLASS)
-   ========================================= */
 .form-container-pro {
   background-color: #161b22;
-  padding: 30px; /* Espacio amplio en PC */
+  padding: 30px; 
   border-radius: 20px;
   border: 1px solid #30363d;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   margin-bottom: 30px;
 }
 
-/* Etiquetas (Labels) */
 .label-pro {
   color: #c9d1d9;
   font-size: 0.9rem;
@@ -305,9 +296,7 @@ input, select {
   font-weight: 500;
 }
 
-/* =========================================
-   2. INPUTS Y SELECTS
-   ========================================= */
+
 .input-pro {
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -320,26 +309,24 @@ input, select {
   outline: none;
   font-family: inherit;
   line-height: 1.5;
-  box-sizing: border-box; /* IMPORTANTE: Para que el padding no rompa el ancho */
+  box-sizing: border-box; 
 }
 
-/* REEMPLAZA SOLO ESTE BLOQUE EN TU CSS */
 
-/* Regla especial para que el desplegable tenga flechita blanca y NO se corte el texto */
+
 select.input-pro {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   
-  /* Flecha blanca personalizada */
+ 
   background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
   background-repeat: no-repeat;
-  background-position: right 10px center; /* Flecha a la derecha */
+  background-position: right 10px center;
   
-  /* AJUSTE CLAVE: Padding específico y altura mínima */
-  padding: 12px 40px 12px 15px; /* Arriba/Abajo: 12px | Derecha: 40px (para la flecha) | Izq: 15px */
-  min-height: 48px;             /* Fuerza una altura mínima para que entre el texto */
-  line-height: normal;          /* Deja que el navegador centre el texto verticalmente */
+  padding: 12px 40px 12px 15px; 
+  min-height: 48px;            
+  line-height: normal;          
 }
 
 select.input-pro option {
@@ -353,14 +340,10 @@ select.input-pro option {
   box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.2);
 }
 
-/* =========================================
-   3. SISTEMA DE COLUMNAS (AQUÍ ESTÁ LA MAGIA)
-   ========================================= */
 
-/* Comportamiento por defecto (PC/Escritorio) */
 .fila-flexible {
-  display: flex;            /* Activa las columnas */
-  flex-direction: row;      /* Dirección horizontal */
+  display: flex;            
+  flex-direction: row;     
   align-items: flex-start;
   gap: 20px;
   width: 100%;
@@ -368,7 +351,7 @@ select.input-pro option {
 }
 
 .columna-mitad {
-  width: 50%;               /* Ocupan mitad y mitad */
+  width: 50%;              
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -389,8 +372,8 @@ select.input-pro option {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #58a6ff;
-  width: 50px; /* Ancho fijo para el botón */
-  min-width: 50px; /* Evita que se aplaste en celular */
+  width: 50px; 
+  min-width: 50px; 
   border-radius: 12px;
   font-size: 1.5rem;
   cursor: pointer;
@@ -417,29 +400,24 @@ select.input-pro option {
   margin-bottom: 20px;
 }
 
-/* =========================================
-   4. MODO CELULAR (RESPONSIVE)
-   ========================================= */
 
-/* Cuando la pantalla sea de 768px o menos (Tablets y Celulares) */
+
 @media (max-width: 768px) {
   
   .form-container-pro {
-    padding: 20px; /* Menos borde en celular para aprovechar espacio */
+    padding: 20px; 
   }
 
-  /* Cambiamos la dirección de fila a columna */
   .fila-flexible {
-    flex-direction: column !important; /* Uno abajo del otro */
+    flex-direction: column !important; 
     gap: 15px;
   }
 
-  /* Los inputs pasan a ocupar todo el ancho */
+ 
   .columna-mitad {
     width: 100% !important;
   }
 
-  /* Ajuste para el input de agregar materia en celular */
   .input-agregar-container {
     width: 100%;
   }
