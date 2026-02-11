@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #000; /* Fondo negro */
+  background-color: #000; 
   color: white;
 }
 
@@ -40,7 +40,7 @@
 .btn-login {
   width: 100%;
   padding: 12px;
-  background-color: #ff4d4d; /* El rojo que querías */
+  background-color: #ff4d4d; 
   color: white;
   border: none;
   border-radius: 8px;
@@ -54,7 +54,6 @@
   font-weight: bold;
 }
 
-/* Esto coloca el ojito justo al final del cuadro de texto */
 .password-wrapper {
   position: relative;
   display: flex;
@@ -63,7 +62,7 @@
 
 .password-wrapper input {
   width: 100%;
-  padding-right: 45px !important; /* Deja espacio para que el ojo no tape las letras */
+  padding-right: 45px !important; 
 }
 
 .toggle-icon {
@@ -71,7 +70,7 @@
   right: 15px;
   cursor: pointer;
   font-size: 1.2rem;
-  color: #ffffff; /* ¡Color blanco para que se vea! */
+  color: #ffffff; 
   z-index: 10;
   user-select: none;
 }
@@ -80,16 +79,13 @@
    AJUSTES PARA MÓVILES (Solo pantalla Registro)
    ========================================= */
 @media (max-width: 480px) {
-  
-  /* 1. Ajustamos la caja principal */
   .login-box {
-    width: 95%;           /* Ocupa casi todo el ancho */
-    max-width: none;      /* Quita límites fijos si los había */
-    padding: 20px 15px;   /* Menos relleno interno */
-    margin-top: 10px;     /* Poco margen arriba para que entre el teclado */
+    width: 95%;           
+    max-width: none;     
+    padding: 20px 15px;   
+    margin-top: 10px;     
   }
 
-  /* 2. Título más pequeño */
   .login-box h2 {
     font-size: 1.5rem;
     margin-bottom: 5px;
@@ -99,24 +95,21 @@
     font-size: 0.9rem;
     margin-bottom: 15px;
   }
-
-  /* 3. Apretamos los espacios entre los inputs */
+  
   .input-group {
-    margin-bottom: 12px; /* Menos espacio entre cada campo */
+    margin-bottom: 12px; 
   }
 
   label {
-    font-size: 0.85rem;  /* Texto de etiqueta más chico */
+    font-size: 0.85rem;  
     margin-bottom: 3px;
   }
 
-  /* 4. Inputs compactos pero tocables */
   input {
-    height: 42px;        /* Altura justa para el dedo */
+    height: 42px;       
     font-size: 0.95rem;
   }
 
-  /* 5. Ajuste del Botón */
   .btn-login {
     height: 48px;
     margin-top: 10px;
