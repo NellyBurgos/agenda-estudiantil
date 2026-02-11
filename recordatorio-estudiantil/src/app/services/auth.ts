@@ -25,16 +25,15 @@ export interface UsuarioRegistrado {
 })
 export class AuthService {
   private auth = inject(Auth);
-  private router = inject(Router); // <--- ESTO FALTABA PARA PODER NAVEGAR
+  private router = inject(Router); 
 
-  // OBSERVABLE: Estado del usuario mejorado
   user$: Observable<UsuarioRegistrado | null> = user(this.auth).pipe(
     map((fbUser) => {
       if (!fbUser) return null;
       return {
         uid: fbUser.uid,
         email: fbUser.email,
-        displayName: fbUser.displayName || 'Estudiante' // Evita que el nombre sea null
+        displayName: fbUser.displayName || 'Estudiante' 
       };
     }),
     catchError(() => of(null))
@@ -52,8 +51,6 @@ export class AuthService {
     return this.auth.currentUser?.email || null;
   }
 
-  // --- MÉTODOS DE AUTENTICACIÓN ---
-
   async loginConGoogle() {
     const provider = new GoogleAuthProvider();
     provider.setCustomParameters({ prompt: 'select_account' }); 
@@ -69,7 +66,6 @@ export class AuthService {
 
   async login(email: string, pass: string) {
     try {
-      // Usamos el método nativo de Firebase
       return await signInWithEmailAndPassword(this.auth, email, pass);
     } catch (error: any) {
       this.manejarErrores(error);
@@ -80,7 +76,6 @@ export class AuthService {
   async registrarConNombre(email: string, pass: string, nombre: string) {
     try {
       const credencial = await createUserWithEmailAndPassword(this.auth, email, pass);
-      // Actualizamos el perfil para que Firebase guarde el nombre del alumno
       await updateProfile(credencial.user, { displayName: nombre });
       return credencial;
     } catch (error: any) {
@@ -111,7 +106,7 @@ export class AuthService {
       console.error("Error al cerrar sesión:", error);
     }
   }
-  // CENTRALIZADOR DE ERRORES MEJORADO
+ 
   private manejarErrores(error: any) {
     let mensaje = "Ocurrió un error inesperado.";
     
