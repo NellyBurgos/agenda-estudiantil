@@ -12,13 +12,11 @@ import { Router } from '@angular/router';
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
+  
 export class LoginComponent implements OnInit {
-  // 1. Variables de formulario (coinciden con tu ngModel)
   nuevoNombre: string = '';
   nuevoEmail: string = '';
   nuevoPass: string = '';
-  
-  // 2. Control del ojito
   isPasswordVisible: boolean = false; 
 
   private platformId = inject(PLATFORM_ID);
@@ -28,11 +26,9 @@ export class LoginComponent implements OnInit {
     private router: Router, 
     private ngZone: NgZone
   ) {}
-  // En tu archivo login.ts
+  
   irARegistro() {
-    console.log("¡Clic detectado!"); // Esto ya funciona
-    
-    // Forzamos a Angular a cambiar de pantalla
+    console.log("¡Clic detectado!"); 
     this.ngZone.run(() => {
       this.router.navigate(['/register']).then(success => {
         if (success) {
@@ -45,15 +41,12 @@ export class LoginComponent implements OnInit {
   
   }
   ngOnInit() {
-    //  inicializar lógica de chequeo de sesión si es necesario
   }
 
-  // Función para el ojito
   togglePassword() {
     this.isPasswordVisible = !this.isPasswordVisible;
   }
 
-  // 3. FUNCIÓN DE LOGIN CORREGIDA
   async ejecutarLogin() {
     if (!this.nuevoEmail || !this.nuevoPass) {
       alert("Por favor, completa email y contraseña.");
@@ -71,11 +64,8 @@ export class LoginComponent implements OnInit {
       alert("Error: Usuario o contraseña incorrectos.");
     }
   }
-
-  // 4. FUNCIÓN PARA NAVEGAR AL REGISTRO (Nueva)
   
 
-  // 5. FUNCIÓN DE REGISTRO OPTIMIZADA
   async ejecutarRegistro() {
     if (this.nuevoNombre && this.nuevoEmail && this.nuevoPass) {
       try {
@@ -96,7 +86,6 @@ export class LoginComponent implements OnInit {
         // Manejo de errores específicos de Firebase
         if (error.code === 'auth/email-already-in-use') {
           try {
-            // Intento de login automático si ya existe
             await this.authService.login(this.nuevoEmail, this.nuevoPass);
             this.router.navigate(['/add-task']);
           } catch (loginError) {
