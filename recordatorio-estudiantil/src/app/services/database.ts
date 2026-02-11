@@ -13,16 +13,14 @@ import {
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
-// 1. DEFINICIÓN DE LA INTERFAZ (El "Molde" de tus datos)
-// Esto evita errores de escritura y elimina el uso de 'any'
 export interface EventoEstudiantil {
-  id?: string;         // Opcional porque al crear aún no tiene ID
+  id?: string;        
   materia: string;
-  tipo: string | string[]; // Puede ser texto o array de tipos
+  tipo: string | string[]; 
   fecha: string;
   hora: string;
   nota: number;
-  estado: string;      // Ej: 'pendiente', 'aprobado'
+  estado: string;      
   usuarioId: string;
   alumnoEmail?: string;
   alumnoNombre?: string;
@@ -36,24 +34,16 @@ export interface EventoEstudiantil {
 export class DatabaseService { 
   private firestore = inject(Firestore);
 
-  // --- 1. FUNCIONES DEL ALUMNO (Carpetas Privadas) ---
-
-  // AHORA: Recibe un objeto tipado, no cualquier cosa ('any')
   agregarEvento(uid: string, evento: EventoEstudiantil) {
     const ruta = `users/${uid}/eventos`; 
     const eventosRef = collection(this.firestore, ruta);
     return addDoc(eventosRef, evento);
   }
 
-  // AHORA: Retorna un Observable de EventoEstudiantil[]
-  // Aquí se aplica el PATRÓN OBSERVER con tipos fuertes.
   obtenerEventos(uid: string): Observable<EventoEstudiantil[]> {
     const ruta = `users/${uid}/eventos`;
     const eventosRef = collection(this.firestore, ruta);
-    
     const q = query(eventosRef, orderBy('fecha', 'asc')); 
-    
-    // El 'as' fuerza a TypeScript a tratar los datos con tu interfaz
     return collectionData(q, { idField: 'id' }) as Observable<EventoEstudiantil[]>;
   }
 
@@ -69,9 +59,7 @@ export class DatabaseService {
     return updateDoc(docRef, { estado: nuevoEstado });
   }
 
-  // --- 2. FUNCIONES DEL ADMIN ---
 
-  // También tipamos la respuesta del Admin
   obtenerTodosLosEventosAdmin(): Observable<EventoEstudiantil[]> {
     const eventosRef = collectionGroup(this.firestore, 'eventos');
     const q = query(eventosRef, orderBy('creadoEn', 'desc'));
