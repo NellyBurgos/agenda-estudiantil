@@ -1,16 +1,16 @@
-/* login.css - DISEÑO DARK CON BOTÓN ROJO CÁPSULA */
+
 
 .app-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #000; /* Fondo negro profundo */
+  background-color: #000; 
   font-family: 'Segoe UI', sans-serif;
 }
 
 .header-card {
-  background-color: #1a1a1a; /* Tu caja oscura */
+  background-color: #1a1a1a; 
   padding: 40px 30px;
   border-radius: 20px;
   width: 90%;
@@ -56,7 +56,7 @@
   padding-left: 2px;
 }
 
-/* INPUTS CON OJITO */
+
 .password-wrapper {
   position: relative;
   display: flex;
@@ -96,14 +96,14 @@ input:focus {
   align-items: center;
 }
 
-/* BOTÓN ROJO ESTILO CÁPSULA */
+
 .btn-red-capsule {
   width: 100%;
   height: 52px;
   background-color: #ff0000;
   color: white;
   border: none;
-  border-radius: 50px; /* Redondeado total */
+  border-radius: 50px; 
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
