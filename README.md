@@ -25,7 +25,7 @@ Aplicación web progresiva para la gestión de tareas académicas, desarrollada 
   ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 ## 🛠️ Funcionalidades
-1.  **Autenticación Segura:** Login y Registro con validación de correo y manejo de sesiones.
+1.  **Autenticación Segura:** Login, registro de usuarios y recuperación de contraseña.
 2.  **Gestión de Tareas (CRUD):** Crear, Leer y Eliminar tareas en tiempo real.
 3.  **Roles de Usuario:**
     * **Admin:** Puede gestionar todas las tareas.
