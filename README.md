@@ -32,7 +32,4 @@ Aplicación web progresiva para la gestión de tareas académicas, desarrollada 
     * **Alumno:** Vista personalizada.
 4.  **Diseño Adaptable:** Interfaz optimizada para celulares y escritorio (Responsive).
 
-## 📦 Instalación
-1. Clonar el repositorio.
-2. Ejecutar `npm install` para instalar dependencias.
-3. Ejecutar `ng serve` para iniciar el servidor de desarrollo.
+
